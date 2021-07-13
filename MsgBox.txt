@@ -1,0 +1,7 @@
+Sub RunMalware()
+	Result = MsgBox("Looks like you just got hacked : (", VbExclamation, "Oh no!")
+End Sub
+
+Sub AutoOpen()
+	Call RunMalware
+End Sub
